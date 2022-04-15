@@ -1,0 +1,45 @@
+﻿@model FullApp.Models.ViewModel.Forget
+
+
+@{
+    Layout = Layout;
+}
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+<link rel="stylesheet" href="~/css/site.css" />
+
+<h1 style="text-align:center">Reset your password</h1>
+
+@{
+    var vv = ViewBag.LinkSentSuccessfully;
+    var cv = vv;
+}
+
+<form asp-controller="Account" asp-action="Forget" method="post">
+    @if (ViewBag.LinkSentSuccessfully != null)
+    {
+        <span id="spanSuccessId" style="color:green">@ViewBag.LinkSentSuccessfully</span>
+    }
+    else
+    {
+        <span id="spanSuccessId" style="color:red">@ViewBag.NotExists</span>
+    }
+    <div class="row">
+        <div class="col-md-5">
+            <div class="form-group">
+                <label>Email:</label>
+                <input type="text" class="form-control" id="txtEmailId" asp-for="Email" />
+                <span id="txtEmailId" asp-validation-for="Email" />
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-md-5">
+            <input type="submit"  class="btn btn-primary" id="forgetpwd" value="Send Password Reset Link" />
+        </div>
+    </div>
+
+</form>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

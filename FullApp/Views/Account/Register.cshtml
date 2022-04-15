@@ -1,0 +1,55 @@
+﻿@model FullApp.Models.ViewModel.SignUp
+@{ Layout = Layout; }
+
+
+<h2 class="text-center" >Sign Up </h2>
+
+<form asp-action="Register" asp-controller="Account" method="post">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <label for="FirstName"><b>First Name</b></label>
+                <input class="form-control" asp-for="FirstName" placeholder="First Name">
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+
+            <div class="col-6">
+                <label for="LastName"><b>Last Name</b></label>
+                <input class="form-control" asp-for="LastName" placeholder="Last Name">
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+        </div>
+    
+        <div class="row">
+            <div class="col-6">
+                <label for="Email"><b>Email</b></label>
+                <input class="form-control" asp-for="Email" placeholder="Username">
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+        </div>
+     
+        <div class="row">
+            <div class="col-6">
+                <label for="Passward"><b>Password</b></label>
+                <input type="password" asp-for="Password" class="form-control" placeholder="Password">
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div  class="col-6">
+                <label for="ConfirmPassword"><b>Confirm Password</b></label>
+                <input type="password" asp-for="ConfirmPassword" class="form-control" placeholder="Confirm Password">
+                <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+            </div>
+        </div>
+
+        <button type="submit">Register</button>
+       
+    </div>
+    <div class="form-group">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    </div>
+    <div class="container" style="background-color:#f1f1f1">
+        <a asp-action="Login" asp-controller="Account" class="btn btn-outline-primary">Already Registered ? Login here....</a>
+        
+    </div>
+</form>

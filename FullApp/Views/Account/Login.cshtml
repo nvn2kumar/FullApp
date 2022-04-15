@@ -1,0 +1,30 @@
+﻿@model FullApp.Models.ViewModel.SignIn
+@{ Layout = Layout; }
+
+
+<h2 class="text-center">Login</h2>
+
+<form asp-action="Login" asp-controller="Account" method="post">
+   
+    <div class="container">
+        <label for="uname"><b>User Email</b></label>
+        <input class="form-control" asp-for="Email" placeholder="User Email" required>
+        <span asp-validation-for="Email" class="text-danger"></span>
+
+        <label for="psw"><b>Password</b></label>
+        <input type="password" asp-for="Password" class="form-control" placeholder="Password"  required>
+        <span asp-validation-for="Password" class="text-danger"></span>
+
+        <button type="submit">Login</button>
+        <label>
+            <input type="checkbox" checked="checked" name="remember"> Remember me
+        </label>
+    </div>
+    <div class="form-group">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    </div>
+    <div class="container" style="background-color:#f1f1f1">
+        <a asp-action="Register" asp-controller="Account" class="btn btn-outline-primary">Not Registered yet? Signup here....</a>
+        <span class="psw">Forgot <a asp-action="Forget" asp-controller="Account" >password?</a></span>
+    </div>
+</form>
