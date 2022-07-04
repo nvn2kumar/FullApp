@@ -104,6 +104,12 @@ namespace Employee5.Controllers
                 files[0].CopyTo(stream);
 
             }
+             else
+             {
+                var emps = dbcontext.Employees.AsNoTracking().Where(e => e.Id == employee.Id).FirstOrDefault();
+
+                dbPath = emps.Image;
+             }
             employee.Image = dbPath;
 
             dbcontext.Employees.Update(employee);
