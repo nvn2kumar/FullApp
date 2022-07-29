@@ -260,7 +260,7 @@ namespace FullApp.Controllers
                     smtpClient.EnableSsl = true;
                     smtpClient.UseDefaultCredentials = false;
                     smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
-                    smtpClient.Credentials = new NetworkCredential("verifyotp9@gmail.com", "Test123@");
+                    smtpClient.Credentials = new NetworkCredential("verifyotp9@gmail.com", "mjwaixbdrmwtxhtl");    //Pasword: Test123@
                     smtpClient.Send(mm);
                     smtpClient.Dispose();
                 }
