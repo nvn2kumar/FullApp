@@ -63,7 +63,7 @@ namespace FullApp.Repository.Service
             smtp.Host = "smtp.gmail.com";
             smtp.Port = 587;
             smtp.UseDefaultCredentials = false;
-            smtp.Credentials = new System.Net.NetworkCredential("verifyotp9@gmail.com", "Test123@"); // Enter seders User name and password  
+            smtp.Credentials = new System.Net.NetworkCredential("verifyotp9@gmail.com", "mjwaixbdrmwtxhtl");    //Pasword: Test123@ Enter seders User name and password  
             smtp.EnableSsl = true;
             smtp.Send(mail);
 
